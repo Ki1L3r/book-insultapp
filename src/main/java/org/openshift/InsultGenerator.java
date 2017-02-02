@@ -5,23 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet; 
 import java.sql.Statement;
 
-import java.util.HashMap;
-import javax.enterprise.context.RequestScoped; import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-
-@RequestScoped 
-@Path("/insult")
-public class InsultResource {
-    @GET()
-    @Produces("application/json")
-    public HashMap<String,String> getInsult() {
-        HashMap<String, String> theInsult = new HashMap<String, String>(); 
-        theInsult.put("insult", new InsultGenerator().generateInsult()); 
-        return theInsult;
-    }
-}
-
 public class InsultGenerator { 
     public String generateInsult() {
         String vowels = "AEIOU";
